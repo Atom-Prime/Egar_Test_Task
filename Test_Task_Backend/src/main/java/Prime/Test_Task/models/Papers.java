@@ -49,12 +49,12 @@ public class Papers {
     }
 
     public String getDate() {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        if (this.date==null){
-            return null;
-        }
-        else {
+        try {
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             return formatter.format(this.date);
+        }
+        catch (ParseException e) {
+            return null;
         }
     }
 
